@@ -1,0 +1,55 @@
+@startuml
+class Utilisateur {
+    +id: int
+    +nom: string
+    +email: string
+    +role: string
+    +seConnecter(): void
+}
+
+class Administrateur {
+    +ajouterUtilisateur(): void
+    +superviserUtilisation(): void
+}
+
+class ResponsableScolarite {
+    +gererStructures(): void
+    +inscrireUtilisateurs(): void
+    +affecterMatieres(): void
+}
+
+class Comptabilite {
+    +suivrePaiements(): void
+    +traiterPaie(): void
+    +genererRapports(): void
+}
+
+class Enseignant {
+    +organiserCours(): void
+    +publierContenus(): void
+    +ajouterEvaluations(): void
+    +accederMatieresAssignees(): void
+    +creerForums(): void
+    +participerChats(): void
+}
+
+class Etudiant {
+    +accederCours():void
+    +passerQuiz(): void
+    +consulterNotes(): void
+    +participerForums(): void
+    +participerChats(): void
+}
+
+class UtilisateurNonAutorise {
+    +consulter(): void
+    +demanderAcces(): void
+}
+
+Utilisateur <|-- Administrateur
+Utilisateur <|-- ResponsableScolarite
+Utilisateur <|-- Comptabilite
+Utilisateur <|-- Enseignant
+Utilisateur <|-- Etudiant
+Utilisateur <|-- UtilisateurNonAutorise
+@enduml

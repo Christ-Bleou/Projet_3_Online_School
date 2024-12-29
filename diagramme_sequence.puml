@@ -1,0 +1,53 @@
+@startuml
+actor Étudiant
+actor Enseignant
+actor Administrateur
+actor Comptabilité
+actor UtilisateurNonAutorise
+participant "Plateforme" as P
+
+Étudiant -> P: Se connecter
+P --> Étudiant: Afficher tableau de bord
+
+Étudiant -> P: Consulter cours
+P -> Enseignant: Charger contenu
+Enseignant --> P: Contenu chargé
+P --> Étudiant: Afficher cours
+
+Étudiant -> P: Passer un quiz
+P -> Enseignant: Vérifier quiz
+Enseignant --> P: Résultat
+P --> Étudiant: Afficher note
+
+Étudiant -> P: Participer à un forum
+P -> Enseignant: Charger discussions
+Enseignant --> P: Discussions affichées
+P --> Étudiant: Envoyer réponse
+
+Étudiant -> P: Participer à un chat
+P --> Étudiant: Chat ouvert
+
+Enseignant -> P: Publier un cours
+P --> Enseignant: Contenu publié
+
+Enseignant -> P: Créer un forum
+P --> Enseignant: Forum créé
+
+Administrateur -> P: Ajouter un utilisateur
+P --> Administrateur: Utilisateur ajouté
+
+Comptabilité -> P: Suivre paiements
+P --> Comptabilité: Paiements suivis
+
+Comptabilité -> P: Générer rapport financier
+P --> Comptabilité: Rapport généré
+
+UtilisateurNonAutorise -> P: Consulter ressources publiques
+P --> UtilisateurNonAutorise: Ressources affichées
+
+UtilisateurNonAutorise -> P: Demander un accès
+P --> UtilisateurNonAutorise: Demande envoyée
+P -> Administrateur: Valider ou rejeter demande
+Administrateur --> P: Réponse sur demande
+P --> UtilisateurNonAutorise: Notification de la décision
+@enduml

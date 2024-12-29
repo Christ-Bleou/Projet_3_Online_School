@@ -1,0 +1,39 @@
+@startuml
+start
+:Se connecter;
+if (Rôle identifié ?) then (Administrateur)
+    :Ajouter utilisateur;
+    :Superviser utilisation;
+    stop
+elseif (Responsable de scolarité)
+    :Gérer structures académiques;
+    :Inscrire utilisateurs;
+    :Affecter Matières;
+    stop
+elseif (Comptabilité)
+    :Suivre paiements;
+    :Traiter Paie;
+    :Générer Rapports;
+    stop
+elseif (Enseignant)
+    :Organiser cours;
+    :Publier contenus pédagogiques;
+    :Ajouter Evaluations;
+    :Accéder Matières;
+    :Créer Forums;
+    :Participer Chats;
+    stop
+elseif (Étudiant)
+    :Accéder aux cours;
+    :Passer quiz et devoirs;
+    :Consulter Notes;
+    :Participer Forums;
+    :Participer Chats;
+    stop
+else 
+    :Rôle inconnu;
+    :Consulter ressources publiques;
+    :Demander accès;
+    stop
+endif
+@enduml

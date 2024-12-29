@@ -1,0 +1,55 @@
+@startuml
+actor Administrateur
+actor ResponsableScolarite
+actor Comptabilite
+actor Enseignant
+actor Etudiant
+
+usecase "Ajouter utilisateur" as UC1
+usecase "Superviser utilisation" as UC2
+usecase "Gérer structures académiques" as UC3
+usecase "Inscrire utilisateurs" as UC4
+usecase "Affecter matières" as UC5
+usecase "Suivre paiements" as UC6
+usecase "Traiter paie" as UC7
+usecase "Générer rapports financiers" as UC8
+usecase "Organiser cours" as UC9
+usecase "Publier contenus pédagogiques" as UC10
+usecase "Ajouter évaluations" as UC11
+usecase "Accéder matières assignées" as UC12
+usecase "Créer forums" as UC13
+usecase "Participer chats de classe" as UC14
+usecase "Accéder aux cours" as UC15
+usecase "Passer quiz et devoirs" as UC16
+usecase "Consulter notes" as UC17
+usecase "Participer forums" as UC18
+usecase "Consulter" as UC19
+usecase "Demander Accès" as UC20
+
+Administrateur --> UC1
+Administrateur --> UC2
+
+ResponsableScolarite --> UC3
+ResponsableScolarite --> UC4
+ResponsableScolarite --> UC5
+
+Comptabilite --> UC6
+Comptabilite --> UC7
+Comptabilite --> UC8
+
+Enseignant --> UC9
+Enseignant --> UC10
+Enseignant --> UC11
+Enseignant --> UC12
+Enseignant --> UC13
+Enseignant --> UC14
+
+Etudiant --> UC15
+Etudiant --> UC16
+Etudiant --> UC17
+Etudiant --> UC18
+
+actor "Utilisateur non autorisé" as NonAutorise
+NonAutorise --> UC19
+NonAutorise --> UC20
+@enduml
